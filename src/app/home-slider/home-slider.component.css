@@ -1,0 +1,5 @@
+.home-slider {
+    background: url('../../assets/home-slider-1.jpg');
+    background-size: cover;
+    height: 100%;
+}

@@ -1,0 +1,36 @@
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#"><span class="mb-0">ZeBase</span></a>
+    <ul class="pull-right navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Нужна помощь?</a>
+        </li>
+      </ul>
+</nav>
+
+<div *ngIf="auth.user | async; then authenticated else guest">
+    <!-- template will replace this div -->
+</div>
+  <!-- User NOT logged in -->
+  <ng-template #guest>
+  <h3>Howdy, GUEST</h3>
+  <p>Login to get started...</p>
+  
+  <button (click)="auth.googleLogin()">
+    <i class="fa fa-google"></i> Connect Google
+  </button>
+  </ng-template>
+  <!-- User logged in -->
+  <ng-template #authenticated>
+  <div *ngIf="auth.user | async as user">
+    <h3>Howdy, {{ user.displayName }}</h3>
+    <img  [src]="user.photoURL">
+    <p>UID: {{ user.uid }}</p>
+    <button (click)="auth.signOut()">Logout</button>
+  </div>
+  </ng-template>
+
+  <div class="navbar-light bg-light text-center navbar-bottom">
+      <span class="navbar-text">
+      Copyright 2018. Project: <a href="#">ZeBase</a>
+      </span>
+  </div>

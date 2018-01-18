@@ -4,5 +4,13 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: 'AIzaSyA8B3HAFBb8l5glcL8UkSPV7IGXSrjxlxQ',
+    authDomain: 'zebase-project.firebaseapp.com',
+    databaseURL: 'https://zebase-project.firebaseio.com',
+    projectId: 'zebase-project',
+    storageBucket: 'zebase-project.appspot.com',
+    messagingSenderId: '535175579244'
+  }
 };
